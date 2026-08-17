@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Control Center</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Phone Control Center</h1>
+      <p id="status">● Web dashboard ready</p>
+    </div>
+    <button id="connectBtn" class="primary">Connect Phone</button>
+  </header>
+
+  <main class="dashboard">
+    <section class="card">
+      <div class="card-title">📞 Calls</div>
+      <div id="calls" class="empty">No call events yet.</div>
+    </section>
+
+    <section class="card">
+      <div class="card-title">💬 Messages</div>
+      <div id="messages" class="empty">No messages yet.</div>
+    </section>
+
+    <section class="card">
+      <div class="card-title">🔔 Notifications</div>
+      <div id="notifications" class="empty">No notifications yet.</div>
+    </section>
+
+    <section class="card camera-card">
+      <div class="card-title">📷 Camera</div>
+      <video id="camera" autoplay playsinline></video>
+      <div class="actions">
+        <button id="startCamera">Start Camera</button>
+        <button id="capture">Capture</button>
+        <button id="stopCamera">Stop</button>
+      </div>
+      <canvas id="snapshot" hidden></canvas>
+      <img id="preview" alt="Captured photo preview">
+    </section>
+
+    <section class="card">
+      <div class="card-title">🖼️ Photos & Files</div>
+      <input id="filePicker" type="file" accept="image/*,video/*,.pdf,.txt,.doc,.docx,.zip" multiple>
+      <div id="fileList" class="file-list"></div>
+    </section>
+
+    <section class="card wide">
+      <div class="card-title">💻 Laptop Transfer</div>
+      <p class="muted">This starter dashboard is ready for the phone bridge and local Wi-Fi transfer module.</p>
+      <div class="transfer-box">
+        <span id="transferStatus">Waiting for phone bridge…</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
