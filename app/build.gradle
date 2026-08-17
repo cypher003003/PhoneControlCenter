@@ -1,1 +1,23 @@
 
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.phonecontrol.center'
+    compileSdk 37
+
+    defaultConfig {
+        applicationId 'com.phonecontrol.center"
+        minSdk 23
+        targetSdk 37
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+    implementation 'androidx.annotation:annotation:1.9.1'
+    implementation 'androidx.core:core:1.18.0'
+    implementation 'androidx.webkit:webkit:1.15.0'
+}
