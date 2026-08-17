@@ -1,1 +1,187 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Phone Control Center</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div>
+        <h1>📱 Phone Control Center</h1>
+        <p id="status">● Starting Android bridge...</p>
+    </div>
+
+    <div class="top-buttons">
+
+        <button onclick="loadCalls()">
+            🔄 Refresh Calls
+        </button>
+
+        <button onclick="enableNotifications()">
+            🔔 Notification Access
+        </button>
+
+        <button onclick="openSettings()">
+            ⚙ Permissions
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="dashboard">
+
+
+    <!-- CALLS -->
+
+    <section class="card">
+
+        <h2>📞 Calls</h2>
+
+        <div id="calls"
+             class="list">
+
+            Loading call history...
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SMS -->
+
+    <section class="card">
+
+        <h2>💬 SMS</h2>
+
+        <div id="messages"
+             class="list">
+
+            Waiting for SMS...
+
+        </div>
+
+    </section>
+
+
+
+    <!-- NOTIFICATIONS -->
+
+    <section class="card wide">
+
+        <h2>🔔 Notifications</h2>
+
+        <div id="notifications"
+             class="list">
+
+            Enable notification access
+            to receive notifications.
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CAMERA -->
+
+    <section class="card wide">
+
+        <h2>📷 Camera</h2>
+
+        <video id="camera"
+               autoplay
+               playsinline>
+        </video>
+
+        <div class="buttons">
+
+            <button onclick="startCamera()">
+                ▶ Start Camera
+            </button>
+
+            <button onclick="capture()">
+                📸 Capture
+            </button>
+
+            <button onclick="stopCamera()">
+                ⏹ Stop
+            </button>
+
+        </div>
+
+        <canvas id="canvas"
+                hidden>
+        </canvas>
+
+        <img id="preview"
+             alt="Captured photo">
+
+    </section>
+
+
+
+    <!-- FILES -->
+
+    <section class="card wide">
+
+        <h2>🖼️ Photos & Files</h2>
+
+        <input
+            id="files"
+            type="file"
+            accept="image/*,video/*,.pdf,.txt,.doc,.docx,.zip"
+            multiple>
+
+        <div id="fileList"
+             class="list">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- LAPTOP -->
+
+    <section class="card wide">
+
+        <h2>💻 Laptop Transfer</h2>
+
+        <div class="transfer">
+
+            <p>
+                Local phone-to-laptop transfer
+                will be activated in the next stage.
+            </p>
+
+            <p id="transferStatus">
+                Waiting for transfer server...
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
